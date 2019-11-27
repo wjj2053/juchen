@@ -3,7 +3,7 @@ export default class one extends React.Component {
     render() {
         return (
             <div>
-                电子票
+                票夹
             </div>
         )
     }

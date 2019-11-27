@@ -1,11 +1,13 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
-import OneImgIco from '../../images/1.ico';
-import TwoImgIco from '../../images/2.ico';
-import ImcOne from '../../images/5.ico';
-import ImcTwo from '../../images/6.ico';
-import MoonOne from '../../images/7.ico';
-import MoonTwo from '../../images/4.ico';
+import homeImg from '../../images/1-2.png';
+import homeImg2 from '../../images/1-1.png';
+import theaterImg from '../../images/2-2.png';
+import theaterImg2 from '../../images/2-1.png';
+import eticketImg from '../../images/3-2.png';
+import eticketImg2 from '../../images/3-1.png';
+import myImg from '../../images/4-2.png';
+import myImg2 from '../../images/4-1.png';
 import {
     Eticket,
     Home,
@@ -16,7 +18,6 @@ import {withRouter} from 'react-router-dom';
 //withRouter高阶组件
 //被它包裹的组件会自动生成 history   localtion等
 class TabBarCom extends React.Component {
-    
     constructor(props) {
         super(props);
         this.state = {
@@ -32,7 +33,6 @@ class TabBarCom extends React.Component {
                     unselectedTintColor="#949494"
                     tintColor="#33A3F4"
                     barTintColor="white"
-
                 >
                     <TabBar.Item
                         title="首页"
@@ -41,7 +41,7 @@ class TabBarCom extends React.Component {
                         icon={<div style={{
                             width: '22px',
                             height: '22px',
-                            background: 'url(' + OneImgIco + ') center center /  21px 21px no-repeat'
+                            background: 'url(' + homeImg + ') center center /  21px 21px no-repeat'
                         }}
                         />
                         }
@@ -49,7 +49,7 @@ class TabBarCom extends React.Component {
                         selectedIcon={<div style={{
                             width: '22px',
                             height: '22px',
-                            background: 'url(' + TwoImgIco + ') center center /  21px 21px no-repeat'
+                            background: 'url(' + homeImg2 + ') center center /  21px 21px no-repeat'
                         }}
                         />
                         }
@@ -64,14 +64,13 @@ class TabBarCom extends React.Component {
                         }}
                         data-seed="logId"
                     >
-                        
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
                             <div style={{
                                 width: '22px',
                                 height: '22px',
-                                background: 'url(' + ImcOne + ') center center /  21px 21px no-repeat'
+                                background: 'url(' + theaterImg + ') center center /  21px 21px no-repeat'
                             }}
                             />
                         }
@@ -79,7 +78,7 @@ class TabBarCom extends React.Component {
                             <div style={{
                                 width: '22px',
                                 height: '22px',
-                                background: 'url(' + ImcTwo + ') center center /  21px 21px no-repeat'
+                                background: 'url(' + theaterImg2 + ') center center /  21px 21px no-repeat'
                             }}
                             />
                         }
@@ -93,18 +92,15 @@ class TabBarCom extends React.Component {
                             });
                             this.props.history.push("/theater");
                             document.title="影院"
-
                         }}
-
                     >
-                        
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
                             <div style={{
                                 width: '22px',
                                 height: '22px',
-                                background: 'url(' + MoonOne + ') center center /  21px 21px no-repeat'
+                                background: 'url(' + eticketImg + ') center center /  21px 21px no-repeat'
                             }}
                             />
                         }
@@ -112,11 +108,11 @@ class TabBarCom extends React.Component {
                             <div style={{
                                 width: '22px',
                                 height: '22px',
-                                background: 'url(' + MoonTwo + ') center center /  21px 21px no-repeat'
+                                background: 'url(' + eticketImg2 + ') center center /  21px 21px no-repeat'
                             }}
                             />
                         }
-                        title="电子票"
+                        title="票夹"
                         key="eticket"
                         // dot
                         selected={this.state.selectedTab === 'eticket'}
@@ -125,16 +121,13 @@ class TabBarCom extends React.Component {
                                 selectedTab: 'eticket',
                             });
                             this.props.history.push("/eticket");
-                            document.title="电子票"
-
-
+                            document.title="票夹"
                         }}
                     >
-                       
                     </TabBar.Item>
                     <TabBar.Item
-                        icon={{ uri: 'http://image.juooo.com/group1/M00/01/D2/rAoKmVwknq2AQjJ3AABZC2s-o9o803.jpg' }}
-                        selectedIcon={{ uri: 'http://image.juooo.com/group1/M00/01/D3/rAoKmVwlyY6AHU-XAABZsyVCtbY679.jpg' }}
+                        icon={{ uri: myImg }}
+                        selectedIcon={{ uri: myImg2 }}
                         title="我的"
                         key="mine"
                         selected={this.state.selectedTab === 'mine'}
@@ -144,11 +137,8 @@ class TabBarCom extends React.Component {
                             });
                             this.props.history.push("/mine");
                             document.title="我的"
-
-
                         }}
                     >
-                        
                     </TabBar.Item>
                 </TabBar>
             </div>
